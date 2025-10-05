@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bamlaku Behailu Yeshite - Public Health Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --secondary: #0ea5e9;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 50%, #f0fdfa 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            animation: float 8s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(2deg); }
+            66% { transform: translateY(-10px) rotate(-2deg); }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Biography Section */
+        .biography-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            margin-bottom: 4rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .biography-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .biography-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .biography-header h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .biography-header i {
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .biography-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .biography-content.active {
+            max-height: 2000px;
+        }
+
+        .bio-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .bio-section h4 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .bio-section p {
+            color: var(--gray);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 100%);
+            border-left: 5px solid var(--primary);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            font-style: italic;
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Documents Section */
+        .documents-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .document-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .document-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .document-preview {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .document-content {
+            padding: 1.5rem;
+        }
+
+        .document-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .document-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .document-info p {
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .document-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 8px 16px;
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+        }
+
+        .document-link:hover {
+            background: var(--primary);
+            color: white;
+            gap: 1rem;
+        }
+
+        /* Experience Section */
+        .experience-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border-left: 5px solid var(--primary);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .experience-card h4 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .experience-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .experience-info p {
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .experience-info i {
+            color: var(--primary);
+            width: 16px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .contact-text p {
+            color: var(--gray);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-about p {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: #cbd5e1;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .documents-grid, .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 2.3rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .biography-section {
+                padding: 2rem;
+            }
+
+            .profile-img {
+                width: 280px;
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Bamlaku Behailu Yeshite</div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#biography">Biography</a>
+                    <a href="#documents">Documents</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Public Health Specialist <span>Driven by Excellence</span></h1>
+                    <p>4+ years of dedicated healthcare experience combined with technological expertise to create meaningful impact through compassionate service and innovation.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Get In Touch
+                        </a>
+                        <a href="#documents" class="btn btn-outline">
+                            <i class="fas fa-file-alt"></i>
+                            View Documents
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://www.dropbox.com/scl/fi/i87h7kb3hps5hul6mcajc/bmk.jpg?rlkey=ceyo8urgmzibgwqa1knbe1alx&st=o2ofgm0j&dl=1" alt="Bamlaku Behailu Yeshite" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section id="biography">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Professional Journey</h2>
+                <p>Click to explore my personal and professional story</p>
+            </div>
+            <div class="biography-section" id="biography-toggle">
+                <div class="biography-header">
+                    <h3><i class="fas fa-book-open"></i> Read My Biography</h3>
+                    <i class="fas fa-chevron-down" id="biography-arrow"></i>
+                </div>
+                <div class="biography-content" id="biography-text">
+                    <div class="bio-section">
+                        <h4><i class="fas fa-seedling"></i> Early Life & Education</h4>
+                        <p>My name is Bamlaku Behailu Yeshite, born on December 3, 1996, in Addis Ababa, Ethiopia. I began my educational journey at Repi Primary and Secondary School in Kara Kore, where I built a strong academic foundation that would shape my future.</p>
+                        <p>Growing up, I learned the value of hard work early. During summer breaks, I worked in the construction sector to cover my school expenses—saving up to buy uniforms and stationery. These formative experiences taught me resilience, discipline, and the importance of self-reliance.</p>
+                    </div>
+
+                    <div class="bio-section">
+                        <h4><i class="fas fa-graduation-cap"></i> Academic Excellence</h4>
+                        <p>After completing high school, I joined Wollega University to pursue a degree in Public Health. My dedication to academics paid off when I graduated with the highest score in my department, achieving an impressive CGPA of 3.91 out of 4.0.</p>
+                        <p>My exceptional performance earned me an offer to become a lecturer at the university—a position I turned down at the time as my dream was to gain practical experience and eventually become an Integrated Emergency Surgical Officer (IESO).</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <p>"I serve the community well. I give service from my heart. I am very responsible and have empathy for patients. Many patients have loved me for my service, and I'm admired and loved by people. There's no organization that fired me except the Federal Ministry of Health contract termination."</p>
+                    </div>
+
+                    <div class="bio-section">
+                        <h4><i class="fas fa-briefcase"></i> Professional Resilience</h4>
+                        <p>After graduating, I faced a seven-month period of unemployment—a challenging time that tested my resilience. During this period, I took on various small jobs to stay active, including working on the Sidama People's Referendum where I served on a short-term contract.</p>
+                        <p>My entrepreneurial spirit led me to launch ETRSS1 Home-to-Home Tutorial with a friend. We hired female teachers and offered private tutoring services, building momentum until COVID-19 disrupted our plans and forced us to close.</p>
+                    </div>
+
+                    <div class="bio-section">
+                        <h4><i class="fas fa-chart-line"></i> Continuous Growth</h4>
+                        <p>When the pandemic hit, I was employed by the Federal Ministry of Health to support the national COVID-19 response. For 2 years and 7 months, I worked across various sites and organizations, contributing significantly to Ethiopia's fight against the pandemic.</p>
+                        <p>My journey continued with roles in private clinics, insurance underwriting, and participation in the Wolaita People's Referendum. Alongside my professional roles, I earned certifications in Digital Marketing, E-commerce, and AI—skills that opened new professional doors.</p>
+                        <p>Today, I serve as an IMNCI Focal Point at a health center, where I'm appreciated by mothers and families for my compassionate care and quality service. My ability to communicate clearly and build trust within the community has been key to my success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documents">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Documents</h2>
+                <p>Browse my certificates, degrees, and professional credentials</p>
+            </div>
+            
+            <div class="documents-tabs">
+                <button class="tab-btn active" data-tab="certificates">Certificates</button>
+                <button class="tab-btn" data-tab="degrees">Academic Degrees</button>
+                <button class="tab-btn" data-tab="licenses">Licenses</button>
+                <button class="tab-btn" data-tab="exams">Exam Results</button>
+            </div>
+
+            <div class="documents-content">
+                <!-- Certificates Tab -->
+                <div class="tab-content active" id="certificates-tab">
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>AI Augmented Professional Development</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> ALX Africa</p>
+                                    <p><i class="fas fa-calendar"></i> Completed April 2024</p>
+                                    <p><i class="fas fa-star"></i> Grade: 81.86%</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/251qzxj7ogl28nls8tqjn/photo_1_2025-05-09_00-06-02.jpg?rlkey=y2cxld9bvbsy41iugrtmgn6aj&st=vaon9c84&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-virus"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>COVID-19 Certificate</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Ethiopian Ministry of Health</p>
+                                    <p><i class="fas fa-calendar"></i> Completed 2022</p>
+                                    <p><i class="fas fa-star"></i> Professional Training</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/jy9znk9o7202s1h31od7r/covid-certificate.jpg?rlkey=faydi33hxejn6pdb0qy415ta4&st=klqvr86l&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Gender Based Violence Certificate</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Professional Training</p>
+                                    <p><i class="fas fa-calendar"></i> Completed 2023</p>
+                                    <p><i class="fas fa-star"></i> Specialized Training</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/99l2wkqp7akrmf6ierp42/gender-based-violence.jpg?rlkey=r6akm5z9m3471wly6b82dhxzm&st=zk97i4mm&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Mental Health Certificate</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Professional Training</p>
+                                    <p><i class="fas fa-calendar"></i> Completed 2023</p>
+                                    <p><i class="fas fa-star"></i> Specialized Training</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/2s8hvqrtvcy2ujc56x87k/mental-health-training.jpg?rlkey=gj3exnmau27zvowrmrwn4y6lt&st=e1v8f68p&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>IMNCI Training</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Professional Training</p>
+                                    <p><i class="fas fa-calendar"></i> Completed 2023</p>
+                                    <p><i class="fas fa-star"></i> Specialized Training</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/8v1epyieel0nikpqznf0e/photo_3_2025-05-09_00-06-02.jpg?rlkey=uiss9shznlsxwup5szkzysxrs&st=962qjm5h&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>HIV Self Test</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Professional Training</p>
+                                    <p><i class="fas fa-calendar"></i> Completed 2023</p>
+                                    <p><i class="fas fa-star"></i> Specialized Training</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/j8mvnyw6a1viqveu3pmur/photo_4_2025-05-09_00-06-02.jpg?rlkey=1km9je2kwmol9maxerhixp1u6&st=1voz7q6v&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>TB, HIV and Leprosy</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Professional Training</p>
+                                    <p><i class="fas fa-calendar"></i> Completed 2023</p>
+                                    <p><i class="fas fa-star"></i> Specialized Training</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/et3y8ct348qg690612g9m/photo_6_2025-05-09_00-06-02.jpg?rlkey=6136q4qszmceou50etj1wvjfw&st=cmgyen5p&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Digital Marketing & E-commerce</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Google Career Certificate</p>
+                                    <p><i class="fas fa-calendar"></i> Completed December 2022</p>
+                                    <p><i class="fas fa-star"></i> Grade: 80%</p>
+                                </div>
+                                <a href="https://www.coursera.org/account/accomplishments/verify/TH7ML3UZTTW6" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Project Management</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Google Coursera</p>
+                                    <p><i class="fas fa-calendar"></i> Completed May 2023</p>
+                                    <p><i class="fas fa-star"></i> Grade: 90%</p>
+                                </div>
+                                <a href="https://www.coursera.org/account/accomplishments/verify/ZASWBTSSNSFJ" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Degrees Tab -->
+                <div class="tab-content" id="degrees-tab">
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Bachelor of Science in Public Health</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Wollega University</p>
+                                    <p><i class="fas fa-calendar"></i> 2015 - 2019</p>
+                                    <p><i class="fas fa-star"></i> CGPA: 3.91/4.00</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/jhzpzmudyub0opmtzfv9u/tempo-bsc.jpg?rlkey=ns3ivvl9qekf5g46i09u76g75&st=vix7j8t2&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Degree
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Research Paper (SPSS Analysis)</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Wollega University</p>
+                                    <p><i class="fas fa-calendar"></i> 2019</p>
+                                    <p><i class="fas fa-chart-bar"></i> Data Analysis with SPSS</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/qrr9clyc1sdc1zg52mlsk/Final-defense-paper.pdf?rlkey=gt6vm5244dpmsai9tkfe4012u&st=bnksphe0&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Research
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Licenses Tab -->
+                <div class="tab-content" id="licenses-tab">
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Professional Health License</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Ethiopian Authorities</p>
+                                    <p><i class="fas fa-calendar"></i> Licensed Professional</p>
+                                    <p><i class="fas fa-stethoscope"></i> Public Health Officer</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/7itb4niqczttokp57ihfa/Professional-License.jpg?rlkey=jt1o66e1oeqwjgx4yld4flj4p&st=5gk6302c&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View License
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add this right after the Professional Health License card in the Licenses Tab -->
+<div class="document-card">
+    <div class="document-preview">
+        <i class="fas fa-car"></i>
+    </div>
+    <div class="document-content">
+        <h4>Driving License</h4>
+        <div class="document-info">
+            <p><i class="fas fa-building"></i> Ethiopian Transport Authority</p>
+            <p><i class="fas fa-calendar"></i> Valid License</p>
+            <p><i class="fas fa-id-card"></i> Category 3</p>
+        </div>
+        <a href="https://www.dropbox.com/scl/fi/vcbivg8z1vjiifmr4fyul/driving-lIcense.jpg?rlkey=3hbc6u4rb95j2qpjl1ldf3zax&st=j9s0jywv&dl=1" class="document-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            View License
+        </a>
+    </div>
+</div>
+         <!-- Exam Results Tab -->
+                <div class="tab-content" id="exams-tab">
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Grade 12 National Exam</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Ethiopian Ministry of Education</p>
+                                    <p><i class="fas fa-calendar"></i> 2015</p>
+                                    <p><i class="fas fa-star"></i> Total Score: 481/700</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/dzvm1rq81zt1rh9m0eqo4/grade-12-national-exam.jpg?rlkey=qg7utyhl5d8ds5mgqq21fxeut&st=nv0cpeby&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Results
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Grade 10 National Exam</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Ethiopian Ministry of Education</p>
+                                    <p><i class="fas fa-calendar"></i> 2013</p>
+                                    <p><i class="fas fa-star"></i> Very Great Distinction</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/qp9uimigdqt42knup92f9/grade-10-national-exam.jpg?rlkey=3nnvek8ayp5bslzuoq6ssszjy&st=atskkc8v&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Results
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-preview">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="document-content">
+                                <h4>Grade 8 National Exam</h4>
+                                <div class="document-info">
+                                    <p><i class="fas fa-building"></i> Ethiopian Ministry of Education</p>
+                                    <p><i class="fas fa-calendar"></i> 2011</p>
+                                    <p><i class="fas fa-star"></i> 89.7 Percentile</p>
+                                </div>
+                                <a href="https://www.dropbox.com/scl/fi/vx587hzmijoddcwstjarr/grade-8-national-exam.jpg?rlkey=svfll9t3194gyikoxl9pac0lz&st=zam4jfbi&dl=1" class="document-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Results
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+                <p>My career journey in healthcare and beyond</p>
+            </div>
+            
+            <div class="experience-tabs">
+                <button class="tab-btn active" data-tab="health">Health Experience</button>
+                <button class="tab-btn" data-tab="other">Other Experience</button>
+            </div>
+
+            <div class="experience-content">
+                <!-- Health Experience -->
+                <div class="tab-content active" id="health-tab">
+                    <div class="experience-grid">
+                        <div class="experience-card">
+                            <h4><i class="fas fa-baby"></i> IMNCI Focal Point</h4>
+                            <div class="experience-info">
+                                <p><i class="fas fa-building"></i> Addis Ababa Health Bureau</p>
+                                <p><i class="fas fa-calendar"></i> 2024 - Present</p>
+                                <p><i class="fas fa-tasks"></i> Diagnose and treat children under 5</p>
+                                <p><i class="fas fa-tasks"></i> Coordinate emergency case referrals</p>
+                                <p><i class="fas fa-tasks"></i> Provide health education</p>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <h4><i class="fas fa-virus"></i> COVID-19 Response</h4>
+                            <div class="experience-info">
+                                <p><i class="fas fa-building"></i> Federal Ministry of Health</p>
+                                <p><i class="fas fa-calendar"></i> 2020 - 2023 (2 years 7 months)</p>
+                                <p><i class="fas fa-tasks"></i> Emergency health response</p>
+                                <p><i class="fas fa-tasks"></i> Pandemic control activities</p>
+                                <p><i class="fas fa-tasks"></i> Patient screening and treatment</p>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <h4><i class="fas fa-clinic-medical"></i> Private Clinic</h4>
+                            <div class="experience-info">
+                                <p><i class="fas fa-building"></i> Private Healthcare Facility</p>
+                                <p><i class="fas fa-calendar"></i> 3 months</p>
+                                <p><i class="fas fa-tasks"></i> General patient care</p>
+                                <p><i class="fas fa-tasks"></i> Health service delivery</p>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <h4><i class="fas fa-hospital"></i> EPHI Experience</h4>
+                            <div class="experience-info">
+                                <p><i class="fas fa-building"></i> Ethiopian Public Health Institute</p>
+                                <p><i class="fas fa-calendar"></i> Professional Experience</p>
+                                <p><i class="fas fa-tasks"></i> Public health research</p>
+                                <p><i class="fas fa-tasks"></i> Health data analysis</p>
+                                <a href="https://www.dropbox.com/scl/fi/at9yjurtdb9rcuw3guxu2/EPHI-1st.jpg?rlkey=hhlelc3edub6mywaptatoeh56&st=xhyqip6m&dl=1" class="document-link" target="_blank" style="margin-top: 10px;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Document 1
+                                </a>
+                                <a href="https://www.dropbox.com/scl/fi/fj85gg4zo0q2tp0dm79yf/ephi-2-original.jpg?rlkey=pzaojqsj135ilka6llfynjmb5&st=76kh0eak&dl=1" class="document-link" target="_blank" style="margin-top: 5px;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Document 2
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <h4><i class="fas fa-landmark"></i> FMOH Experience</h4>
+                            <div class="experience-info">
+                                <p><i class="fas fa-building"></i> Federal Ministry of Health</p>
+                                <p><i class="fas fa-calendar"></i> Professional Experience</p>
+                                <p><i class="fas fa-tasks"></i> Health policy implementation</p>
+                                <p><i class="fas fa-tasks"></i> National health programs</p>
+                                <a href="https://www.dropbox.com/scl/fi/a9lkkq8f90jnqa4a2b88h/FMOH.jpg?rlkey=fuowzajnzf69b02x6g3gnbgjo&st=dbxdfq49&dl=1" class="document-link" target="_blank" style="margin-top: 10px;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Document
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <h4><i class="fas fa-hands-helping"></i> Mekedonya Experience</h4>
+                            <div class="experience-info">
+                                <p><i class="fas fa-building"></i> Mekedonya Organization</p>
+                                <p><i class="fas fa-calendar"></i> Professional Experience</p>
+                                <p><i class="fas fa-tasks"></i> Community health services</p>
+                                <p><i class="fas fa-tasks"></i> Public health outreach</p>
+                                <a href="https://www.dropbox.com/scl/fi/prqhx62cuiaevxqpx59qo/photo_3_2025-05-09_00-22-38.jpg?rlkey=am94ysq4nddwbl4nksdwze9b8&st=tjfuajyo&dl=1" class="document-link" target="_blank" style="margin-top: 10px;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Document
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Experience -->
+                <div class="tab-content" id="other-tab">
+                    <div class="experience-grid">
+                        <div class="experience-card">
+                            <h4><i class="fas fa-shield-alt"></i> Junior Underwriter</h4>
+                            <div class="experience-info">
+                                <p><i class="fas fa-building"></i> Hibret Insurance</p>
+                                <p><i class="fas fa-calendar"></i> 2023 - 2024</p>
+                                <p><i class="fas fa-tasks"></i> Managed 150+ policies monthly</p>
+                                <p><i class="fas fa-tasks"></i> Risk assessment and analysis</p>
+                                <p><i class="fas fa-tasks"></i> Client relationship management</p>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <h4><i class="fas fa-store"></i> Freelance Entrepreneur</h4>
+                            <div class="experience-info">
+                                <p><i class="fas fa-building"></i> BROS Laptop Computers</p>
+                                <p><i class="fas fa-calendar"></i> 2020 - Present</p>
+                                <p><i class="fas fa-tasks"></i> Built 10,000+ member Telegram channel</p>
+                                <p><i class="fas fa-tasks"></i> E-commerce and digital marketing</p>
+                                <p><i class="fas fa-tasks"></i> Electronics and accessories sales</p>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <h4><i class="fas fa-chalkboard-teacher"></i> Education Entrepreneur</h4>
+                            <div class="experience-info">
+                                <p><i class="fas fa-building"></i> ETRSS1 Home-to-Home Tutorial</p>
+                                <p><i class="fas fa-calendar"></i> Entrepreneurial Venture</p>
+                                <p><i class="fas fa-tasks"></i> Established tutoring business</p>
+                                <p><i class="fas fa-tasks"></i> Hired and managed female teachers</p>
+                                <p><i class="fas fa-tasks"></i> Private education services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Let's connect for opportunities, collaborations, or professional discussions</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Address</h4>
+                            <p>bamheltho27@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone Numbers</h4>
+                            <p>+251 920708128</p>
+                            <p>+251 908809078</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Addis Ababa, Ethiopia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Social Media</h4>
+                            <p>Connect with me through these platforms</p>
+                            <div class="social-links">
+                                <a href="https://t.me/Bsquare" class="social-link" target="_blank">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="https://www.facebook.com/BamlakuBehailu" class="social-link" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="What is this regarding?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Tell me how I can help you..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Bamlaku Behailu Yeshite</div>
+                    <p>A dedicated Public Health Specialist with 4+ years of experience in healthcare delivery, emergency response, and community service. Combining technical expertise with compassionate care to make a meaningful impact.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#biography">Biography</a></li>
+                        <li><a href="#documents">Documents</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> bamheltho27@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +251 920708128</p>
+                    <p><i class="fas fa-phone"></i> +251 908809078</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Bamlaku Behailu Yeshite. All Rights Reserved. | Professional Portfolio
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 30px rgba(30, 64, 175, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(30, 64, 175, 0.1)';
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Biography toggle functionality
+        const biographyToggle = document.getElementById('biography-toggle');
+        const biographyContent = document.getElementById('biography-text');
+        const biographyArrow = document.getElementById('biography-arrow');
+
+        biographyToggle.addEventListener('click', () => {
+            biographyContent.classList.toggle('active');
+            biographyArrow.style.transform = biographyContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+
+        // Add fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.hero-text, .hero-image, .biography-section, .document-card, .experience-card, .contact-item, .contact-form');
+            
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
